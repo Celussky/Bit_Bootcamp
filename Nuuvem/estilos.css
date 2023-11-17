@@ -1,0 +1,270 @@
+:root {
+    --color-azul: #151d27;
+    --color-blanco: #fff;
+    --color-azul-2: #263241;
+    --color-azul-3: #1065db;
+    --color-azul-claro: #09c;
+    --color-gris: #5f738a;
+    --color-naranja: #ffcc24;
+    --color-morado: #8a10db;
+    --color-rojo: #db1024;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--color-azul);
+}
+
+.composicionLogo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0 20px 30px;
+}
+
+.barra {
+    background: var(--color-azul);
+    display: flex;
+    justify-content: space-between;
+}
+
+.composicionLogo :nth-child(2) {
+    width: 40px;
+}
+
+.composicionLogo :nth-child(3) {
+    width: 130px;
+    margin-left: 15px;
+}
+
+.navCentral {
+    margin: 0 15px;
+}
+
+.btnNav {
+    background-color: transparent;
+    border: none;
+    color: var(--color-blanco);
+    font-size: 16px;
+    white-space: nowrap;
+    height: 80px;
+    padding: 0 20px;
+    font-family: 'Open Sans', sans-serif;
+    border-top: 3px solid transparent;
+    transition: all .5s;
+}
+
+.flexNav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.posicionIcono1 {
+    transform: rotate(90deg);
+    margin-right: 5px;
+}
+
+.posicionIcono2 {
+    margin-right: 5px;
+}
+
+.arrow {
+    font-size: 10px;
+}
+
+.posicionIcono3 {
+    font-size: 16px;
+}
+
+.busqueda {
+    background: var(--color-azul-2);
+    height: 40px;
+    border: none;
+    width: 370px;
+    padding-left: 15px;
+    margin-left: 30px;
+}
+
+.busqueda::placeholder {
+    color: #b4b2b2;
+    font-style: italic;
+}
+
+.lupaRelatva {
+    position: relative;
+    width: 16px;
+    height: 16px;
+}
+
+.lupa {
+    position: absolute;
+    color: #b4b2b2;
+    left: -25px;
+}
+
+.posicionIcono4 {
+    color: var(--color-blanco);
+    margin-right: 5px;
+    font-size: .8rem;
+}
+
+.menuHamburguesa {
+    color: var(--color-blanco);
+    margin-right: 15px;
+    font-size: 1.2rem;
+    display: none;
+}
+
+.lupaResponsive {
+    display: none;
+}
+
+.btnOferta:hover {
+    border: 3px solid var(--color-naranja);
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 0;
+}
+.btnOferta:hover i.posicionIcono1 {
+    color: var(--color-naranja);
+}
+
+.btnOferta:hover i.flecha,
+.btnJuegos:hover i.flecha {
+    transform: rotate(180deg);
+}
+
+.btnJuegos:hover {
+    border: 3px solid var(--color-morado);
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 0;
+}
+
+.btnJuegos:hover i.posicionIcono2 {
+    color: var(--color-morado);
+}
+
+.btnPuntos:hover {
+    border: 3px solid var(--color-azul-3);
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 0;
+}
+
+.btnOferta:hover i.arrow,
+.btnJuegos:hover i.arrow {
+    transform: rotate(180deg);
+}
+
+.btnPuntos:hover i.posicionIcono3 {
+    color: var(--color-azul-3);
+}
+
+.btnConectar:hover {
+    border: 3px solid var(--color-azul-claro);
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 0;
+}
+
+.btnCarrito:hover {
+    border: 3px solid var(--color-rojo);
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 0;
+}
+
+.sliderContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px 0;
+}
+
+.cuadricula {
+    display: grid;
+    grid-template-columns: 52px 700px 345px 52px;
+}
+
+.scrollR{
+    display: none;
+}
+
+.imaPrincipal {
+    grid-column: 2 / 3;
+    grid-row: 1 / 3;
+}
+
+.imgSecundaria1 {
+    grid-column: 3/ 4;
+}
+
+.imgSecundaria2 {
+    grid-column: 3/ 4;
+}
+
+.imgSlider {
+    width: 100%;
+    height: 100%;
+}
+
+.scroll {
+    font-size: 50px;
+    color: var(--color-gris);
+}
+
+.scroll:hover {
+    color: var(--color-azul-claro);
+}
+
+.scroll1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-row: 1/3;
+}
+
+
+.scroll2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-column: 4/5;
+    grid-row: 1/3;
+}
+
+/* .puntosScroll {
+    background: var(--color-gris);
+    border-radius: 10px;
+    width: 10px;
+    height: 10px;
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.punto {
+    margin: 0 4px;
+    text-indent: -9000px;
+} */
+
+.bloqueContenedor {
+    margin-top: 25px;
+}
+
+.bloque {
+    padding: 0 10px;
+}
+
+.iconBloque1 {
+    padding-left: 10px;
+    font-family: Open Sans,Arial,Helvetica;
+}
+
