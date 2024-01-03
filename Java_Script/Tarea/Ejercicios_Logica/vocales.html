@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Contador de vocales</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+
+<body class="container mt-4">
+    <section>
+        <h1>Contador de vocales</h1>
+        <form id="calcularVocales">
+            <div class="input-group mb-3">
+                <input id="oracionUsuario" type="text" class="form-control" placeholder="Escribe una oración"
+                    aria-label="Username" aria-describedby="basic-addon1">
+                <button class="btn btn-primary" type="submit">Calcular</button>
+            </div>
+            <div>
+                <h3 id="respuesta"></h3>
+            </div>
+        </form>
+    </section>
+    <section>
+        <div class="d-flex justify-content-center">
+            <a class="text-decoration-none m-4" href="index.html">Volver al inicio</a>
+        </div>
+    </section>
+    <script>
+        let calculadoraVocales = document.querySelector("#calcularVocales")
+        calculadoraVocales.addEventListener("submit", (e) => {
+            e.preventDefault();
+            let oracionDada = e.target.oracionUsuario.value
+            let divisionOracion = oracionDada.split("")
+            let cantidadVocales = 0
+            let vocales = ["a", "e", "i", "o", "u"]
+            let calcular = divisionOracion.filter((letra) => vocales.includes(letra))
+            document.querySelector("#respuesta").innerHTML = calcular.length
+        })
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
