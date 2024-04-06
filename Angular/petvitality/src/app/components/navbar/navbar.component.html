@@ -1,0 +1,118 @@
+<nav class="bg-navbar navbar-expand-lg letra fs-5">
+  <div class="container-fluid d-flex flex-row justify-content-around align-items-center">
+    <div>
+      <a class="navbar-brand d-flex align-items-center" routerLink="/">
+        <img src="assets/img/logo.png" alt="" class="dLogo">PET VITALY
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active mx-3" aria-current="page" routerLink="tienda">
+            <i class="fa-solid fa-basket-shopping"></i> Tienda
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link mx-3 d-flex" routerLink="veterinaria">
+            <img src="assets/img/veticono.png" alt="" class="veticono"> Veterinaria
+          </a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle mx-3" href="#" role="button" data-bs-toggle="dropdown"
+            aria-expanded="false">
+            <i class="fa-solid fa-paw"></i> Otros Servicios
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Adopciones</a></li>
+            <li><a class="dropdown-item" href="#">Colegio Canino</a></li>
+            <li><a class="dropdown-item" href="#">Hotel para Gatos y Perros</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link mx-3" routerLink="contacto"><i class="fa-solid fa-address-book"></i> Contacto</a>
+        </li>
+      </ul>
+    </div>
+    <section>
+      <div>
+        <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
+          <i class="fa-solid fa-user"></i> Login
+        </button>
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Contáctanos</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <div class="container contenedorContact">
+                  <div class="contact-image">
+                    <img src="assets/img/cohete.jpg" alt="rocket_contact" />
+                  </div>
+                  <form class="contact-form" [formGroup]="contactoForm">
+                    <h3>DÉJANOS UN MENSAJE</h3>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <input type="text" name="txtName" required="" class="form-control"
+                            placeholder="Nombre completo *" formControlName="nombre" />
+                        </div>
+                        <div class="fw-bold text-danger"
+                          *ngIf="contactoForm.get('nombre')?.hasError('required') && contactoForm.get('nombre')?.touched">
+                          El nombre es obligatorio</div>
+                        <div class="fw-bold text-danger"
+                          *ngIf="contactoForm.get('nombre')?.hasError('pattern') && contactoForm.get('nombre')?.touched">
+                          El nombre no es valido</div>
+                        <div class="form-group">
+                          <input type="text" name="txtEmail" required="" formControlName="correo" class="form-control"
+                            placeholder="Email *" value="" />
+                        </div>
+                        <div class="fw-bold text-danger"
+                          *ngIf="contactoForm.get('correo')?.hasError('required') && contactoForm.get('correo')?.touched">
+                          El correo es obligatorio</div>
+                        <div class="fw-bold text-danger"
+                          *ngIf="contactoForm.get('correo')?.hasError('pattern') && contactoForm.get('correo')?.touched">
+                          El correo no es valido</div>
+                        <div class="form-group">
+                          <input type="text" name="txtPhone" required="" formControlName="telefono" class="form-control"
+                            placeholder="Número de teléfono *" value="" />
+                        </div>
+                        @if(contactoForm.get('telefono')?.hasError('required') &&
+                        contactoForm.get('telefono')?.touched){
+                        <div class="fw-bold text-danger">El teléfono es obligatorio</div>
+                        } @if(contactoForm.get('telefono')?.hasError('pattern') &&
+                        contactoForm.get('telefono')?.touched){
+                        <div class="fw-bold text-danger">El teléfono no es valido</div>
+                        }
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <textarea name="txtMsg" required="" class="form-control" placeholder="Tu mensaje *"
+                            style="width: 100%; height: 150px;" formControlName="mensaje"></textarea>
+                        </div>
+                        <div class="fw-bold text-danger"
+                          *ngIf="contactoForm.get('mensaje')?.hasError('required') && contactoForm.get('mensaje')?.touched">
+                          El mensaje es obligatorio</div>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <input type="submit" name="btnSubmit" class="btnContact py-1" value="Enviar mensaje" />
+                    </div>
+                  </form>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</nav>

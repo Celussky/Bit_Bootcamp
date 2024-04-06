@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Salsa&display=swap');
+
+:root {
+  --color-bg-navbar: #deb753;
+  --color-secundario: #deb7536d;
+}
+
+.dLogo {
+  height: 50px;
+}
+
+.letra {
+  font-family: 'Salsa', cursive;
+}
+
+.bg-navbar {
+  background-color: var(--color-bg-navbar);
+}
+
+.veticono {
+  height: 30px;
+}
+
+.bg-secundario {
+  background-color: var(--color-secundario);
+  height: 300px;
+}
+
+.imgInicio {
+  height: 200px;
+}
+
+.layout {
+  position: relative;
+}
+
+.layout .iLayout {
+  height: 400px;
+  object-fit: cover;
+}
+
+.layout .tLayout {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 5rem;
+  text-align: center;
+  width: 100%;
+  text-shadow: 2px 2px 4px #000000;
+}
+
+.imgL {
+  width: 467px;
+  height: 753px;
+}
+
+.imgP {
+  width: 683px;
+  height: 348px;
+}
+
+.iTienda {
+  font-size: 3rem;
+  color: white;
+  text-shadow: 2px 2px 4px #000000;
+  background-size: cover;
+}
+
+.snaks {
+  background-image: url(../src/assets/img/snaks.jpg);
+}
+
+.medicina {
+  background-image: url(../src/assets/img/medicamentos.jpg);
+}
+
+.higiene {
+  background-image: url(../src/assets/img/higiene.jpg);
+}
+
+.juguetes {
+  background-image: url(../src/assets/img/juguetes2.jpg);
+}
+
+.accesorios {
+  background-image: url(../src/assets/img/accesorios2.jpg);
+}
+
+.comida {
+  background-image: url(../src/assets/img/alimentos.jpg);
+}
+
+.btnVetA{
+  background-color: var(--color-bg-navbar);
+}
+
+.btnVetI{
+  background-color: var(--color-secundario);
+}
+
+.btnVet{
+  height: 85px;
+  border-radius: 45px;
+  margin-bottom: 36px;
+}
+
+.link{
+  color: var(--color-bg-navbar);
+}
+
+.formulario input,
+.formulario textarea{
+  background-color: var(--color-secundario);
+}
+
+.btnEnviar{
+  height: 45px;
+  border-radius: 45px;
+}
+
+.body{
+  background: -webkit-linear-gradient(left, var(--color-bg-navbar), var(--color-secundario));
+}
+.contenedorContact{
+  padding-bottom: 10%;
+}
+.contact-form{
+  padding: 10%;
+  padding-bottom: 5%;
+  background: #fff;
+}
+.contact-form .form-control{
+  border-radius:1rem;
+}
+.contact-image{
+  text-align: center;
+}
+.contact-image img{
+  border-radius: 6rem;
+  width: 15%;
+  transform: translateY(85%);
+}
+.contact-form form{
+  padding: 14%;
+}
+.contact-form form .row{
+  margin-bottom: -7%;
+}
+.contact-form h3{
+  margin-bottom: 6%;
+  margin-top: -10%;
+  text-align: center;
+  color: var(--color-bg-navbar);
+  padding-top: 15%;
+}
+
+.contact-form .form-group {
+  margin-bottom: 18px;
+}
+.contact-form .btnContact {
+  width: 100%;
+  border: none;
+  border-radius: 1rem;
+  background: var(--color-bg-navbar);
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+}
+
+.modal-body{
+  background-color: var(--color-secundario);
+}

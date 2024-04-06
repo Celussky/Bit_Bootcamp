@@ -59,7 +59,7 @@ function actualizarResumenCompra() {
     let costoEnvio = (envioPrioritario.checked) ? 5000 : 0;
 
     let precioProductos = calcularPrecioTotalProductos();
-    let descuento = (totalProductos > 7) ? precioProductos * 0.3 : 0;
+    let descuento = (totalProductos > 7) ? precioProductos * 0.7 : 0;
     let totalPagar = precioProductos - descuento + costoEnvio;
 
     document.querySelector('#totalPagar').innerText = `$ ${totalPagar}`;

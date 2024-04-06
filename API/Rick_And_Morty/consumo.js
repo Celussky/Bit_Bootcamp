@@ -1,4 +1,4 @@
-let urlApi = 'https://rickandmortyapi.com/api/character'
+// let urlApi = 'https://rickandmortyapi.com/api/character'
 
 // let dataSerie = fetch(urlApi)
 //     .then(respuestaAPI => respuestaAPI.json())
@@ -22,12 +22,13 @@ let urlApi = 'https://rickandmortyapi.com/api/character'
 
 
 
-const obtenerPersonajes = async() => {
+const obtenerPersonajes = async(urlApi = 'https://rickandmortyapi.com/api/character', busqueda = false) => {
     let htmlContenido = document.querySelector("#contenido")
+    htmlContenido.innerHTML = ""
+    document.querySelector("#divPaginacion").innerHTML = ""
     try {
         let dataSerie = await fetch(urlApi)
         let dataApi = await dataSerie.json()
-        console.log(dataApi)
         let arrResultados = dataApi.results
         arrResultados.forEach(personaje => {
             htmlContenido.innerHTML += `
@@ -41,12 +42,28 @@ const obtenerPersonajes = async() => {
                 </div>
                 `
         });
-    } catch (error) {
-        htmlContenido.innerHTML = `
-        <div class="alert alert-danger" role="alert">
-            Ah ocurrido algo! comunícate con el administrador
-        </div>
+        let disabledBtnAnt = (dataApi.info.prev == null) ? 'disabled' : ''
+        let disabledBtnSig = (dataApi.info.next == null) ? 'disabled' : ''
+
+        document.querySelector("#divPaginacion").innerHTML = `
+            <button class="btn btn-dark" ${disabledBtnAnt} data-url="${dataApi.info.prev}">Anterior</button>
+            <button class="btn btn-dark" ${disabledBtnSig} data-url="${dataApi.info.next}">Siguiente</button>
         `
+        asignarEventosPaginacion()
+    } catch (error) {
+        if (!busqueda) {
+            htmlContenido.innerHTML = `
+            <div class="alert alert-danger" role="alert">
+                Ah ocurrido algo! comunícate con el administrador
+            </div>
+            `
+        } else {
+            htmlContenido.innerHTML = `
+            <div class="alert alert-warning" role="alert">
+                No existen coincidencias
+            </div>
+        `
+        }
         console.log(error)
     }
 }
@@ -55,6 +72,27 @@ const obtenerPersonajes = async() => {
 obtenerPersonajes()
 
 
+function asignarEventosPaginacion() {
+    let botones = document.querySelectorAll("[data-url]")
+    console.log(botones)
+    botones.forEach(boton => {
+        boton.addEventListener("click", (evento) => {
+            obtenerPersonajes(evento.target.dataset.url)
+        })
+    });
+}
+
+
+document.querySelector("#busqueda").addEventListener("submit", (evento) => {
+    evento.preventDefault()
+    obtenerPersonajes(`https://rickandmortyapi.com/api/character/?name=${evento.target.txtBusqueda.value}`, true)
+})
+
+// console.log("A")
+// setTimeout(() => {
+//     console.log("B")
+// }, 3000);
+// console.log("C")
 
 
 
